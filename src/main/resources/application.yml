@@ -1,0 +1,25 @@
+
+spring:
+  rabbitmq:
+    username: guest
+    password: guest
+    addresses: 127.0.0.1:5672    
+    vhost: testVhost
+    listener:
+      simple:
+        retry:
+          max-attempts: 5
+          enabled: true
+          initial-interval: 5000
+          
+    testDirectExchange: E.DEV.DIRECT.rabbitmq.testDirectExchange
+    testTopicExchange: E.DEV.TOPIC.rabbitmq.testTopicExchange
+    testFanoutExchange: E.DEV.FANOUT.rabbitmq.testFanoutExchange	
+    testDirectQueue1: Q.DEV.DURABLE.rabbitmq.testDirectQueue1
+    testDirectQueue2: Q.DEV.DURABLE.rabbitmq.testDirectQueue2
+    testTopicQueue1: Q.DEV.DURABLE.rabbitmq.testTopicQueue1
+    testTopicQueue2: Q.DEV.DURABLE.rabbitmq.testTopicQueue2
+    testFanoutQueue1: Q.DEV.DURABLE.rabbitmq.testFanoutQueue1
+    testFanoutQueue2: Q.DEV.DURABLE.rabbitmq.testFanoutQueue2
+    topicRoutingKey: usa.news.weather
+    directRoutingKey: weather
